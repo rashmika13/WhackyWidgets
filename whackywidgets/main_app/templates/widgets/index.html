@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block content %}
+    <h1>Whacky Widgets</h1>
+
+        {% if widgets.count == 0 %}
+        <h3>No Widgets Exist</h3>
+        {% else %}
+            <table class="pure-table pure-table-striped">
+                <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+               <tbody>
+                {% for widget in widgets %}
+                <tr>
+                    <td>{{widget.description}}</td>
+                    <td>{{widget.quantity}}</td>
+                    <td><a href="{% url 'widget_delete' widget.id %}">X</a></td>
+                </tr> 
+                {% endfor %} 
+                <tr>
+                    <td>Total Quantity</td>
+                    <td> {{total_quantity}}</td>
+                    <td></td>
+                </tr>
+               </tbody>   
+            </table>
+        {% endif %}
+    <hr />
+    <h4>Add Widget</h4>
+        <form action="{% url 'add_widget' %}" method="post">
+        {% csrf_token %} {{ widget_form.as_p }}
+        <input type="submit" class="btn" value="Add Widget" />
+        </form>
+</body>
+{% endblock %}
+</html>

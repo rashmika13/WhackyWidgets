@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Whack Widgets</title>
+    <title>Whacky Widgets</title>
     <link
       rel="stylesheet"
       href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
@@ -19,9 +19,15 @@
     />
   </head>
   <body>
-    <h1>Whacky Widgets</h1>
-    <h3>No Widgets Exist</h3>
-    <hr />
-    <h4>Add Widget</h4>
+    <main class="container">
+      {% block content %} {% endblock %}
+    </main>
+    <div>
+      <footer class="page-footer">
+        <div class="right">
+          All Rights Reserved, &copy; 2020 Whacky Widgets &nbsp;
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

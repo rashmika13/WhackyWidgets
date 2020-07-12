@@ -2,3 +2,22 @@ body {
   text-align: center;
   margin: 2rem;
 }
+
+footer.page-footer {
+  padding-top: 25%;
+  text-align: center;
+}
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+
+table {
+  margin: 2rem auto;
+}
+
+table a {
+  color: red;
+  text-decoration: none;
+}
